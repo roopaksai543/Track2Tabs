@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding for proper text rendering -->
+  <meta charset="UTF-8" />
+
+  <!-- Page title shown in browser tab -->
+  <title>Track2Tabs</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Client-side logic (drag/drop, API calls, UI updates)
+       Loaded with defer so it runs after HTML is parsed -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <!-- ========================================= -->
+    <!-- TITLE + LOGO -->
+    <!-- ========================================= -->
+    <div class="title-row">
+      <!-- App logo -->
+      <img src="/logo.png" alt="Track2Tabs logo" class="logo" />
+
+      <!-- App name -->
+      <h1>Track2Tabs</h1>
+    </div>
+
+    <!-- Short description of what the app does -->
+    <p class="app-description">
+      Track2Tabs analyzes your audio to detect chord progressions in real time,
+      showing you chord diagrams and a full timeline you can follow while listening.
+    </p>
+
+    <!-- Instructional subtitle -->
+    <p class="subtitle">Drop an MP3/WAV file to detect chords.</p>
+
+    <!-- ========================================= -->
+    <!-- FILE DROP ZONE -->
+    <!-- ========================================= -->
+    <!-- Custom drag-and-drop area for audio uploads -->
+    <div id="drop-zone">
+      <span>Drop audio here or click to choose</span>
+
+      <!-- Hidden file input triggered by clicking the drop zone -->
+      <input
+        id="file-input"
+        type="file"
+        accept=".mp3,.wav,audio/*"
+        hidden
+      />
+    </div>
+
+    <!-- ========================================= -->
+    <!-- STATUS / FEEDBACK -->
+    <!-- ========================================= -->
+    <!-- Used to show loading, errors, or success messages -->
+    <div id="status"></div>
+
+    <!-- ========================================= -->
+    <!-- AUDIO PLAYER + CURRENT CHORD DISPLAY -->
+    <!-- ========================================= -->
+    <section id="player-section">
+      <!-- Native audio player for uploaded track -->
+      <audio id="player" controls></audio>
+
+      <!-- Current chord visualization -->
+      <div id="current-chord-wrapper">
+        <!-- Text label showing detected chord at current playback time -->
+        <div class="current-chord-text">
+          Current chord:
+          <span id="current-chord">—</span>
+        </div>
+
+        <!-- Container for chord diagram image (e.g. guitar chord) -->
+        <div id="chord-image"></div>
+      </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CHORD MAP / SUMMARY -->
+    <!-- ========================================= -->
+    <section id="chord-summary">
+      <h2>Chord Map</h2>
+
+      <!-- Placeholder text before analysis completes -->
+      <p id="summary-text">Drop a file to see the chord map.</p>
+
+      <!-- Compact chord tags / overview list -->
+      <div id="chord-tags"></div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CHORD TIMELINE -->
+    <!-- ========================================= -->
+    <!-- Time-aligned chord segments rendered here -->
+    <section id="chords-container"></section>
+
+    <!-- ========================================= -->
+    <!-- DOWNLOAD OUTPUT -->
+    <!-- ========================================= -->
+    <!-- Disabled until chord analysis is available -->
+    <button id="download-btn" disabled>
+      Download chord sheet (PDF)
+    </button>
+  </main>
+</body>
+</html>
