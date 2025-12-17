@@ -5,7 +5,7 @@ Track2Tabs is a web-based guitar learning tool that analyzes audio files and aut
 Upload a song, play it back, and see the current chord, guitar finger placement, and a full chord timeline in real time.
 
  Live Website:
- [Track2Tabs](https://track-to-tab-proto3.vercel.app/)
+ [Track2Tabs](https://track2tabs.vercel.app/)
 
 ## Description
 
@@ -44,8 +44,8 @@ Track2Tabs currently supports the following chords:
 
 The frontend is hosted on Vercel and built with HTML, CSS, and JavaScript, handling audio playback, real time chord syncing, and UI rendering. A Python backend hosted on Railway performs audio processing and chord detection. Guitar chord diagrams are served as static assets via GitHub Pages for reliability. The user experience runs entirely in the browser, with analysis handled on the server side.
 
-[Inspiration](https://github.com/roopaksai543/trackToTab-Proto3/tree/main/inspiration)  
-[Project Status](https://github.com/roopaksai543/trackToTab-Proto3/tree/main/projectStatus)
+[Inspiration](https://github.com/roopaksai543/Track2Tabs/tree/main/inspiration)  
+[Project Status](https://github.com/roopaksai543/Track2Tabs/tree/main/projectStatus)
 
 Built by **Roopaksai Sivakumar**  
 Computer Engineering @ UC Irvine  
