@@ -29,10 +29,6 @@ const CHORD_IMAGE_MAP = {
   G7: "g-7th-v1.png",
 };
 
-/****************************************************
- *  DOM REFERENCES
- ****************************************************/
-
 /**
  * Cache DOM elements once to avoid repeated lookups
  * and keep logic readable.
