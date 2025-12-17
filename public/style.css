@@ -1,0 +1,289 @@
+/****************************************************
+ *  CSS VARIABLES (THEME)
+ ****************************************************/
+
+/* Global color palette */
+:root {
+  --primary: #432689;   /* Brand accent (purple) */
+  --light: #d9d9d9;     /* Light text / UI */
+  --dark: #000000;      /* Page background */
+}
+
+/****************************************************
+ *  GLOBAL LAYOUT
+ ****************************************************/
+
+body {
+  /* Dark app background */
+  background: var(--dark);
+  color: var(--light);
+
+  /* System font stack for native feel */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Center app horizontally */
+  display: flex;
+  justify-content: center;
+
+  /* Page padding for mobile + desktop */
+  padding: 40px 16px;
+}
+
+main {
+  /* App container sizing */
+  max-width: 720px;
+  width: 100%;
+
+  /* Card-like background */
+  background: #0b0b0b;
+
+  /* Rounded edges for modern UI */
+  border-radius: 18px;
+
+  /* Inner spacing */
+  padding: 28px;
+
+  /* Elevated shadow */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/****************************************************
+ *  TITLE / HEADER
+ ****************************************************/
+
+.title-row {
+  /* Horizontal logo + title alignment */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  /* Logo sizing */
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  opacity: 0.7;
+}
+
+/****************************************************
+ *  FILE DROP ZONE
+ ****************************************************/
+
+#drop-zone {
+  margin-top: 20px;
+  height: 120px;
+
+  /* Dashed border communicates drag target */
+  border: 2px dashed var(--primary);
+  border-radius: 14px;
+
+  /* Center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* UX affordance */
+  cursor: pointer;
+  text-align: center;
+
+  /* Smooth hover transition */
+  transition: background 0.2s ease;
+}
+
+/* Highlight when dragging file over */
+#drop-zone.dragover {
+  background: rgba(67, 38, 137, 0.15);
+}
+
+#drop-zone span {
+  font-size: 1rem;
+}
+
+/****************************************************
+ *  STATUS / FEEDBACK
+ ****************************************************/
+
+#status {
+  margin-top: 14px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/****************************************************
+ *  AUDIO PLAYER
+ ****************************************************/
+
+#player-section {
+  margin-top: 18px;
+  padding: 16px;
+
+  /* Sub-card styling */
+  border-radius: 14px;
+  background: #000;
+
+  /* Accent outline */
+  border: 1px solid var(--primary);
+}
+
+#player {
+  /* Full-width audio controls */
+  width: 100%;
+}
+
+/****************************************************
+ *  CURRENT CHORD DISPLAY
+ ****************************************************/
+
+#current-chord-wrapper {
+  margin-top: 16px;
+
+  /* Prevents UI from jumping as images load */
+  min-height: 260px;
+
+  /* Center content vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-chord-text {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#current-chord {
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/****************************************************
+ *  CHORD IMAGE
+ ****************************************************/
+
+#chord-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#chord-image img {
+  /* Prevent oversized chord diagrams */
+  max-width: 160px;
+}
+
+/****************************************************
+ *  CHORD MAP / SUMMARY
+ ****************************************************/
+
+#chord-summary {
+  margin-top: 24px;
+}
+
+#chord-summary h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+#summary-text {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Row of compact chord tags */
+#chord-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.chord-tag {
+  padding: 6px 10px;
+
+  /* Pill-shaped tags */
+  border-radius: 999px;
+
+  border: 1px solid var(--primary);
+  font-size: 0.85rem;
+}
+
+/****************************************************
+ *  CHORD TIMELINE
+ ****************************************************/
+
+#chords-container {
+  margin-top: 18px;
+
+  /* Scrollable timeline panel */
+  background: #000;
+  border-radius: 14px;
+  padding: 14px;
+
+  max-height: 260px;
+  overflow-y: auto;
+
+  border: 1px solid var(--primary);
+}
+
+#chords-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#chords-container li {
+  padding: 6px 0;
+
+  /* Subtle separation between entries */
+  border-bottom: 1px solid #222;
+
+  /* Monospace for time alignment */
+  font-family: monospace;
+}
+
+/****************************************************
+ *  DOWNLOAD BUTTON
+ ****************************************************/
+
+#download-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+
+  /* Large rounded CTA */
+  border-radius: 999px;
+  border: none;
+
+  background: var(--primary);
+  color: var(--light);
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  /* Disabled by default */
+  opacity: 0.6;
+
+  /* Subtle interaction feedback */
+  transition: opacity 0.2s ease, transform 0.05s ease;
+}
+
+/* Enabled state */
+#download-btn:enabled {
+  opacity: 1;
+}
+
+/* Press feedback */
+#download-btn:active {
+  transform: scale(0.98);
+}
