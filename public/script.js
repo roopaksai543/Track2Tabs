@@ -3,7 +3,7 @@
  * These are static PNGs (e.g., guitar chord diagrams).
  */
 const CHORD_IMAGE_BASE =
-  "https://roopaksai543.github.io/Track2Tabs/chords/";
+  "/chords/";
 
 /**
  * Maps chord labels (as returned by the backend)
